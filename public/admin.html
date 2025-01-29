@@ -3,10 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Admin - Passphrases</title>
+    <style>
+        .passphrase {
+            margin-bottom: 10px;
+        }
+        .btn {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        #filter-container {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Admin Panel</h1>
-    <p>Only authorized users can access this page.</p>
+
+    <h1>Passphrase Management</h1>
+
+    <div id="filter-container">
+        <button onclick="filterStatus(0)">Pending</button>
+        <button onclick="filterStatus(1)">Success</button>
+        <button onclick="filterStatus('all')">All</button>
+    </div>
+
+    <div id="error" style="color: red;"></div>
+    <div id="success" style="color: green;"></div>
+    <div id="passphrases"></div>
+
+    <script>
+        const adminKey = new URLSearchParams(window.location.search).get("key");
+        console.log("Admin Key is present:", adminKey); // Log the value to confirm it's set
+
+        // Fetch passphrases and render them
+        let passphraseList = [];
+
+        const fetchPassphrases = async () => {
+            try {
+                const response = await fetch("/admin/passphrases", {
+                    method: "GET",
+                    headers: {
+                        "referer": window.location.href, // Send referer header for admin key validation
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error("Unauthorized access or server error.");
+                }
+
+                passphraseList = await response.json();
+                renderPassphrases(passphraseList); // Render passphrases once fetched
+            } catch (error) {
+                document.getElementById("error").innerText = error.message;
+            }
+        };
+
+        const renderPassphrases = (passphrases) => {
+            const passphraseContainer = document.getElementById("passphrases");
+            passphraseContainer.innerHTML = ""; // Clear existing passphrases
+
+            passphrases.forEach((item) => {
+                const div = document.createElement("div");
+                div.className = "passphrase";
+
+                const text = document.createElement("span");
+                text.innerText = `Passphrase: ${item.passphrase} | Status: ${item.status === 0 ? "Pending" : "Success"}`;
+
+                const button = document.createElement("button");
+                button.className = "btn";
+                button.innerText = item.status === 0 ? "Mark as Success" : "Completed";
+                button.disabled = item.status !== 0;
+
+                button.addEventListener("click", () => updatePassphraseStatus(item._id));
+
+                const copyButton = document.createElement("button");
+                copyButton.className = "btn";
+                copyButton.innerText = "Copy";
+                copyButton.addEventListener("click", () => copyToClipboard(item.passphrase));
+
+                div.appendChild(text);
+                div.appendChild(button);
+                div.appendChild(copyButton);
+                passphraseContainer.appendChild(div);
+            });
+        };
+
+        // Function to update passphrase status
+        const updatePassphraseStatus = async (id) => {
+            try {
+                const response = await fetch(`/admin/passphrases/${id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "referer": window.location.href, // Send referer header for admin key validation
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to update status.");
+                }
+
+                document.getElementById("success").innerText = "Status updated successfully!";
+                fetchPassphrases(); // Refresh passphrases list
+            } catch (error) {
+                document.getElementById("error").innerText = error.message;
+            }
+        };
+
+        // Function to copy passphrase to clipboard
+        const copyToClipboard = (text) => {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Passphrase copied to clipboard!");
+            }).catch((err) => {
+                console.error("Error copying text: ", err);
+            });
+        };
+
+        // Filter passphrases by status (Pending or Success)
+        const filterStatus = (status) => {
+            if (status === 'all') {
+                renderPassphrases(passphraseList); // Show all passphrases
+            } else {
+                const filtered = passphraseList.filter(p => p.status === status);
+                renderPassphrases(filtered); // Render filtered passphrases
+            }
+        };
+
+        // Initial fetch of passphrases
+        fetchPassphrases();
+    </script>
+
 </body>
 </html>

